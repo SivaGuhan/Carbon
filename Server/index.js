@@ -26,6 +26,19 @@ app.post("/add",async(req,res)=>{
     cont.save().then(console.log('saved'));
 })
 
+app.get("/ngo",async(req,res)=>{
+    Cont.find(async(err,result)=>{
+        res.json(result);
+    })
+})
+
+app.post("/find",(req,res)=>{
+    const {email}=req.body;
+    Cont.find({email},(err,result)=>{
+        res.json(result);
+    })
+})
+
 app.listen(5000,()=>{
     console.log("Server started");
 })

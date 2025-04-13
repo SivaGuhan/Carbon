@@ -4,7 +4,8 @@ const ProfileSchema=new mongoose.Schema({
     role:"String",
     preference:"String",
     loc:"String",
-    email:"String"
+    email:"String",
+    password:"String"
 })
 const Cont=mongoose.model("Users",ProfileSchema);
 module.exports=Cont;
